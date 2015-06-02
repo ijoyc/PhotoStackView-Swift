@@ -425,9 +425,10 @@ class PhotoStackView: UIControl {
             xPosition = CGRectGetMidX(bounds) + width
         } else if velocity.x < 0 {
             xPosition = CGRectGetMidX(bounds) - width
-        } else if velocity.y > 0 {
+        }
+        if velocity.y > 0 {
             yPosition = CGRectGetMidY(bounds) + height
-        } else {
+        } else if velocity.y < 0 {
             yPosition = CGRectGetMidY(bounds) - height
         }
         
